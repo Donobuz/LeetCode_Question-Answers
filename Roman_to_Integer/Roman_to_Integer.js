@@ -21,6 +21,8 @@ let romanToInt = (s) => {
         let currentCharacter = reverseChar[i];
 
 
+        // Check if the current index value is a V or an X e.g 5 or a 10
+        // if so add the value of the letter to the sum, but also check if I is after the letter; if so, subtract 1 from sum.
         if (currentCharacter === "V" || currentCharacter === "X"){
             checkCharacter = reverseChar[i+1];
             currentLetterValue = romanLetterMap.get(reverseChar[i]);
@@ -32,6 +34,8 @@ let romanToInt = (s) => {
             }
         }
 
+        // Check if the current index value is a L or an C e.g 50 or a 100
+        // if so add the value of the letter to the sum, but also check if X is after the letter; if so, subtract 10 from sum.
         else if (currentCharacter === "L" || currentCharacter === "C"){
             checkCharacter = reverseChar[i+1];
             currentLetterValue = romanLetterMap.get(reverseChar[i]);
@@ -43,6 +47,8 @@ let romanToInt = (s) => {
             }
         }
 
+        // Check if the current index value is a D or an M e.g 500 or a 1000
+        // if so add the value of the letter to the sum, but also check if C is after the letter; if so, subtract 100 from sum.
         else if (currentCharacter === "D" || currentCharacter === "M"){
             checkCharacter = reverseChar[i+1];
             currentLetterValue = romanLetterMap.get(reverseChar[i]);
@@ -54,6 +60,7 @@ let romanToInt = (s) => {
             }
         }
 
+        // This is last case where if none of the letters appear before letters above, just add value to sum.
         else{
             currentLetterValue = romanLetterMap.get(reverseChar[i]);
             sum += currentLetterValue;
