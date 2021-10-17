@@ -1,0 +1,31 @@
+O(1) = constant time complexity; no matter how big the call or calculation, it will always be the same speed
+O(n) = Linear
+O(n^2) = Quadratic, Squared: Typically for double nested forloop
+O(n^3) = Cubed: Typically for triple nested forloop
+O(log(n)) = Typically used for halving your input multiple times, for binary search algorithm 
+
+
+Rules:
+1. Drop the constant: O(2n) => O(n)
+2. Drop non-dominant terms: O(n^2 + n) => O(n^2)
+3. Different steps get added together: the following forloops time complexities are added together
+
+forloop {
+
+}
+
+forloop{
+
+}
+
+4. Different input => different variables: the two following forloops are nested => this means we multiply the two. This is not n^2 (n*n). 
+This uses two different variables as inputs, or iterated over two different arrays => O(a * b)
+
+Two Arrays: a and b
+
+for(let i = 0; i < a.length; i++){
+    for(let j = 0; j < b.length; j++){
+
+    }
+}
+
